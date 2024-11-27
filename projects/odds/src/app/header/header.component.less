@@ -1,0 +1,103 @@
+@import '../../common.less';
+
+:host {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: flex-start;
+    .desktop({
+        gap: 64px;
+        padding: 0 42px;
+    });
+    .mobile({
+        gap: 24px;
+        padding: 0 16px;
+    });
+
+
+    background: @color-blue-500;
+
+    .links {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px 32px;
+        a {
+            .font-primary;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+            color: @color-white;
+            white-space: nowrap;
+        }
+    }
+    
+    .logo {
+        flex: 0 0 auto;
+        width: 100px;
+        height: 40px;
+        .background-image;
+        background-image: url(../../assets/img/logo-treebase.svg);
+        .mobile({
+            margin-inline-start: auto;
+        })
+    }
+
+    .pkw {
+        flex: 0 0 auto;
+        margin-inline-start: auto;
+        width: 187px;
+        height: 32px;
+        .background-image;
+        background-image: url(../../assets/img/logo-hasadna.svg);
+    }
+
+    .menu-button {
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+        .background-image;
+        background-image: url(../../assets/img/icon-menu.svg);
+    }
+
+    .menu {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        right: 0;
+        transform: translateY(-120%);
+        transition: transform 0.3s ease-in-out;
+        &.active {
+            transform: translateY(0);
+        }
+        background-color: white;
+        padding: 64px;
+        display: flex;
+        flex-flow: column;
+        gap: 32px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+     
+        a {
+            .font-primary;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 100%;
+            color: @color-blue-300;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        .close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 24px;
+            height: 24px;
+            .background-image;
+            background-image: url(../../assets/img/icon-close.svg);
+        }
+    }
+}
