@@ -3,8 +3,7 @@ git checkout main && \
 (git branch -D dist || true) && \
 git checkout -b dist && \
 rm .gitignore && \
-python indicators.py && \
-npm run prod && \
+npm run build && \
 cp dist/odds/browser/index.html dist/odds/browser/404.html && \
 cp CNAME dist/odds/browser/ || true && \
 git add dist/odds/browser && \
