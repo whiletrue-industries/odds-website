@@ -142,7 +142,10 @@
         .decision {
             padding-bottom: 16px;
             margin-bottom: 16px;
-            position: relative;
+            display: flex;
+            flex-flow: column;
+            gap: 16px;
+
             .quote {
                 .font-secondary;
                 display: inline-block;
@@ -160,9 +163,7 @@
                 color: @color-blue-50;
             }
             .source {
-                position: absolute;
-                bottom: 0;
-                inset-inline-end: 0;
+                align-self: flex-end;
                 .font-primary;
                 font-style: normal;
                 font-weight: 400;
@@ -178,14 +179,16 @@
             background-size: contain;
             .desktop({
                 &.left {
-                    background-image: url(../../assets/img/data-analysis-svgrepo-com.svg);
-                    background-position: center left;
-                    padding-inline-start: 200px
+                    background-image: url(../../assets/img/books3-white.svg);
+                    background-position: center right;
+                    padding-inline-end: 200px;
+                    background-size: 150px;
                 }
                 &.right {
-                    background-image: url(../../assets/img/illustration-leaves-kind2.svg);
-                    background-position: center right;
-                    padding-inline-end: 200px
+                    background-image: url(../../assets/img/books1-white.svg);
+                    background-position: center left;
+                    padding-inline-start: 200px;
+                    background-size: 150px;
                 }
     
             });
@@ -203,7 +206,7 @@
                 line-height: 120%;
                 color: @color-white;
             }
-            span {
+            span, strong {
                 .font-primary;
                 font-style: normal;
                 font-weight: 400;
@@ -211,6 +214,10 @@
                 line-height: 132%;
                 text-align: justify;
                 color: @color-blue-50;
+            }
+
+            strong {
+                font-weight: 700;
             }
         }
     }
@@ -288,24 +295,24 @@
                     .desktop({
                         .background-image;
                         background-position: center right;
-                        padding-inline-end: 160px;
-                        background-size: auto 140px;
+                        // padding-inline-end: 200px;
+                        background-size: 180px;
                         min-height: 140px;
-                        &.kind2 {
-                            background-image: url(../../assets/img/illustration-leaves-kind2.svg);
-                        }
-                        &.kind3 {
-                            background-image: url(../../assets/img/illustration-leaves-kind3.svg);
-                        }
-                        &.kind4 {
-                            background-image: url(../../assets/img/illustration-leaves-kind4.svg);
+                        // &.kind2 {
+                        //     background-image: url(../../assets/img/illustration-leaves-kind2.svg);
+                        // }
+                        // &.kind3 {
+                        //     background-image: url(../../assets/img/books2-blue-500.svg);
+                        // }
+                        // &.kind4 {
+                        //     background-image: url(../../assets/img/illustration-leaves-kind4.svg);
 
-                            .number {
-                                font-size: 32px;
-                                font-weight: 700;
-                                margin: 0 4px;
-                            }
-                        }
+                        //     .number {
+                        //         font-size: 32px;
+                        //         font-weight: 700;
+                        //         margin: 0 4px;
+                        //     }
+                        // }
                     });    
 
                     & > ul {
@@ -361,7 +368,7 @@
                     background: @color-blue-50;
                     border-radius: 40px;
                     display: flex;
-                    align-items: center;
+                    align-items: flex-start;
                     justify-content: center;
                     gap: 12px;
                     .desktop({
@@ -370,6 +377,7 @@
                     });
                     .mobile({
                         flex-flow: column;
+                        align-items: center;
                         padding: 32px 16px;
                     });
 
@@ -382,6 +390,7 @@
                         background-image: url(../../assets/img/icon-arrow-left.svg);
                         background-size: contain;
                         .desktop({
+                            margin-top: 40px;
                             transform: rotate(180deg)
                         });
                         .mobile({
@@ -392,8 +401,8 @@
                     .step {
                         .background-image;
                         background-position: top 16px center;
-                        background-size: auto 40px;
-                        padding-top: 72px;
+                        background-size: 80px;
+                        padding-top: 96px;
 
                         span {
                             .font-primary;
@@ -407,10 +416,10 @@
                         }
 
                         &.step1 {
-                            background-image: url(../../assets/img/icon-step-1.svg);
+                            background-image: url(../../assets/img/icon-scan-blue-300.svg);
                         }
                         &.step2 {
-                            background-image: url(../../assets/img/icon-step-2.svg);
+                            background-image: url(../../assets/img/icon-analyze-blue-300.svg);
                         }
                         &.step3 {
                             background-image: url(../../assets/img/icon-step-3.svg);
@@ -440,7 +449,8 @@
             font-size: 56px;
             line-height: 105%;
             text-align: center;
-            color: @color-blue-500;
+            color: @color-blue-50;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
 
         .subtitle {
@@ -448,10 +458,11 @@
             text-align: center;
             .font-primary;
             font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
+            font-weight: 700;
+            font-size: 18px;
             line-height: 142%;
-            color: @color-blue-500;
+            color: @color-blue-50;
+            text-shadow: 0px 0px 10px rgb(0, 0, 0);
             a {
                 text-decoration: underline;
             }
