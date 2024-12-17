@@ -3,11 +3,20 @@
 :host {
     background-color: @color-blue-500;
     .desktop({
-        padding: 80px 120px;
+        padding: 40px;
         display: flex;
-        flex-flow: row;
+        flex-flow: column;
         align-items: center;
         justify-content: space-between;
+        gap: 32px;
+
+        > div {
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
     });
     .mobile({
         padding: 32px 16px;
@@ -28,23 +37,9 @@
         color: @color-white;
     }
 
-    .pkw-logo {
-        width: 244px;
-        height: 35px;
-        .background-image;
-        background-image: url(../../assets/img/logo-hasadna-footer.svg);
-    }
-
-    .datacity-logo {
-        width: 67px;
-        height: 40px;
-        .background-image;
-        background-image: url(../../assets/img/logo-datacity.svg);
-    }
-
     .right {
         .desktop({
-            flex: 0 0 50%;
+            flex: 0 0 auto;
         });
         display: flex;
         flex-flow: column;
@@ -69,6 +64,43 @@
         span {
             display: inline;
             width: auto;
+        }
+    }
+
+    .eu {
+        .desktop({
+            max-width: 50%;
+        });
+        .mobile({
+            justify-content: center;
+        });
+        text-align: center;
+        color: @color-white;
+        .font-primary;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        gap: 32px;
+
+        span {
+            flex: 1 1 auto;
+        }
+        .img {
+            width: 200px;
+            height: 100px;
+            .background-image;
+            flex: 0 0 auto;
+            
+            &.eu-funded {
+                background-image: url(../../assets/img/eu-funded.png);
+            }
+
+            &.ngi-search {
+                background-image: url(../../assets/img/ngi-search.png);
+            }
         }
     }
 }
