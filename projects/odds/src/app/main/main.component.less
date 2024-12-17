@@ -402,10 +402,17 @@
                     }
 
                     .step {
-                        .background-image;
-                        background-position: top 16px center;
-                        background-size: 80px;
-                        padding-top: 96px;
+                        padding-top: 16px;
+                        display: flex;
+                        flex-flow: column;
+                        align-items: center;
+                        gap: 12px;
+
+                        img {
+                            width: 80px;
+                            height: 80px;
+                            object-fit: contain;
+                        }
 
                         span {
                             .font-primary;
@@ -416,16 +423,6 @@
                             text-align: center;
                             display: inline-block;
                             color: @color-blue-500;
-                        }
-
-                        &.step1 {
-                            background-image: url(../../assets/img/icon-scan-blue-300.svg);
-                        }
-                        &.step2 {
-                            background-image: url(../../assets/img/icon-analyze-blue-300.svg);
-                        }
-                        &.step3 {
-                            background-image: url(../../assets/img/icon-step-3.svg);
                         }
                     }
                 }
