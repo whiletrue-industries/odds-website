@@ -486,6 +486,7 @@
 
     .join-us {
         background-color: @color-white;
+        width: 100%;
         .desktop({
             padding: 100px;
             display: flex;
@@ -502,7 +503,8 @@
         });
         
         .section {
-            flex: 0 1 50%;
+            // flex: 0 1 50%;
+            width: 100%;
             display: flex;
             flex-flow: column;
             gap: 8px;
@@ -511,12 +513,6 @@
             .title, .subtitle {                
                 font-weight: 400;
                 color: @color-blue-500;
-                .desktop({
-                    max-width: 60%;
-                });
-                .mobile({
-                    max-width: 100%;
-                });
             }
 
             .title {
