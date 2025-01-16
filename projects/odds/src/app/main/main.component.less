@@ -48,7 +48,12 @@
             .font-secondary;
             font-style: normal;
             font-weight: 500;
-            font-size: 104px;
+            .desktop({
+                font-size: 104px;
+            });
+            .mobile({
+                font-size: 64px;
+            });
             line-height: 130%;
             color: @color-grey-100;
             text-align: center;
